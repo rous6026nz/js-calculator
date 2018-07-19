@@ -1,0 +1,63 @@
+/* CUSTOM JS CALCULATOR STYLESHEET */
+
+/* BODY STYLING */
+body {
+    background: rgb(243, 243, 243);
+}
+
+/* CUSTOM FONT */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/* OVERRIDE SKELETON FONT FAMILY */
+* {
+    font-family: "Open Sans";
+}
+
+/* OVERRIDE SKELETON GRID COLUMN WIDTHS FOR MOBILE */
+.three.columns {
+    width: 22%;
+    margin-left: 4%;
+}
+.column:first-child,
+.columns:first-child {
+    margin-left: 0;
+}
+
+/* CALCULATOR CONTAINER STYLING */
+.calculator {
+    width: 400px;
+    background: #fafafa;
+    padding: 4rem;
+    margin: 2rem auto;
+    border-top-left-radius: 80% 20px;
+    border-top-right-radius: 80% 20px;
+    border-bottom-left-radius: 80% 20px;
+    border-bottom-right-radius: 80% 20px;
+    box-shadow: inset 5px 0 10px -5px rgba(153,153,153, .3),
+                inset -5px 0 10px -5px rgba(153,153,153, .3),
+                inset 0px -5px 10px -2px rgba(153,153,153, .3),
+                    0 0 1px 2px rgba(153,153,153, .3),
+                    0 10px 20px 0 rgba(153,153,153, .3);
+}
+
+/* CALCULATOR BUTTON STYLING */
+.calculator button {
+    background: #333;
+    border-radius: 15px;
+    height: 65px;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+/* IMPORTANT BUTTON STYLING */
+.important {
+    background: #c00000 !important;
+}
+
+/* DISPLAY STYLING */
+.display {
+    height: 65px !important;
+    font-size: 3rem;
+    text-align: right;
+}
