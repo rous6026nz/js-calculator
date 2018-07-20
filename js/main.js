@@ -16,11 +16,11 @@
         temp = "",
 
     // Create a variable to reference the calculator input field - display.
-        display = document.getElementById('answer');
+        display = document.getElementById('answer'),
 
 // BUTTON EVENT LISTENER
     // Create a variable to store all the button elements.
-    var btnElem = document.querySelectorAll('.button');
+        btnElem = document.querySelectorAll('.button');
 
     // Add a click event listener on all button elements of the calculator.
     btnElem.forEach(function(ele) {
@@ -30,6 +30,24 @@
             // Create a variable to store the text value of each button element clicked - val.
             var val = ele.innerHTML;
 
+            // HELPER FUNCTIONS
+
+            // Build entries array helper function.
+            // Input:   Array
+            //          Math Operator
+            //          Number
+            // -------------------------------------------------------
+            function buildArray(arr, mathOp, num) {
+                // Push the value of 'temp' on to the 'entries' array.
+                arr.push(num);
+
+                // Push the math operation on to the 'entries' array.
+                arr.push(mathOp);
+
+                // Set the 'temp' variable to an empty string.
+                temp = '';
+            }
+            
             // RUN CHECKS FOR BUTTON TEXT VALUES:
             // CHECK IF NUMBER OR DECIMAL
             if(!isNaN(val) || val === '.') {
@@ -66,50 +84,26 @@
 
             // CHECK IF 'X'
             if(val === 'x') {
-                // Push the value of 'temp' on to the 'entries' array.
-                entries.push(temp);
-
-                // Push a multiplier(*) on to the 'entries' array.
-                entries.push('x');
-
-                // Set the 'temp' variable to an empty string.
-                temp = '';
+                // Build the entries array.
+                buildArray(entries, val, temp);
             }
 
             // CHECK IF '÷'
             if(val === '÷') {
-                // Push the value of 'temp' on to the 'entries' array.
-                entries.push(temp);
-
-                // Push a division(/) on to the 'entries' array.
-                entries.push('÷');
-
-                // Set the 'temp' variable to an empty string.
-                temp = '';
+                // Build the entries array.
+                buildArray(entries, val, temp);
             }
 
             // CHECK IF '-'
             if(val === '-') {
-                // Push the value of 'temp' on to the 'entries' array.
-                entries.push(temp);
-
-                // Push an minus(-) on to the 'entries' array.
-                entries.push('-');
-
-                // Set the 'temp' variable to an empty string.
-                temp = '';
+                // Build the entries array.
+                buildArray(entries, val, temp);
             }
 
             // CHECK IF '+'
             if(val === '+') {
-                // Push the value of 'temp' on to the 'entries' array.
-                entries.push(temp);
-
-                // Push an addition(+) on to the 'entries' array.
-                entries.push('+');
-
-                // Set the 'temp' variable to an empty string.
-                temp = '';
+                // Build the entries array.
+                buildArray(entries, val, temp);
             }
 
             // CHECK IF '='
