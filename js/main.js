@@ -41,10 +41,19 @@
             }
 
             // CHECK IF 'AC'
+            if(val === 'AC') {
                 // Set the 'entries' array to an empty array.
+                entries = [];
+
                 // Set the 'total' variable to 0.
+                total = 0;
+
                 // Set the 'temp' variable to an empty string.
+                temp = '';
+
                 // Set the #answer value to an empty string.
+                display.value = 0;
+            }
 
             // CHECK IF 'CE'
                 // Set the 'temp' variable to an empty string.
