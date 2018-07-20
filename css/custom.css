@@ -1,34 +1,40 @@
 /* CUSTOM JS CALCULATOR STYLESHEET */
 
-/* BODY STYLING */
-body {
-    background: rgb(243, 243, 243);
+/* CUSTOM FONT */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Sonsie+One);
+
+html {
+    font-size: 4px;
 }
 
-/* CUSTOM FONT */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-/* OVERRIDE SKELETON FONT FAMILY */
-* {
+/* BODY STYLING */
+body {
+    background: rgb(209, 202, 202);
     font-family: "Open Sans";
 }
 
-/* OVERRIDE SKELETON GRID COLUMN WIDTHS FOR MOBILE */
-.three.columns {
-    width: 22%;
-    margin-left: 4%;
+/* TYPOGRAPHY */
+.title {
+    font-family: "Sonsie One";
+    font-size: 8rem;
+    text-align: center;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+    color: #c5c210;
 }
-.column:first-child,
-.columns:first-child {
-    margin-left: 0;
+
+.sub-title {
+    font-size: 5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8rem;
 }
 
 /* CALCULATOR CONTAINER STYLING */
 .calculator {
     width: 400px;
     background: #fafafa;
-    padding: 4rem;
-    margin: 2rem auto;
+    padding: 10rem;
+    margin: 10rem auto;
     border-top-left-radius: 80% 20px;
     border-top-right-radius: 80% 20px;
     border-bottom-left-radius: 80% 20px;
@@ -40,24 +46,41 @@ body {
                     0 10px 20px 0 rgba(153,153,153, .3);
 }
 
+/* DISPLAY STYLING */
+.display {
+    height: 65px !important;
+    font-size: 4rem;
+    text-align: right;
+    margin-bottom: 4rem;
+}
+
+/* OVERRIDE SKELETON GRID COLUMN WIDTHS FOR MOBILE */
+.three.columns {
+    width: 22%;
+    margin-left: 4%;
+}
+
+.column:first-child,
+.columns:first-child {
+    margin-left: 0;
+}
+
 /* CALCULATOR BUTTON STYLING */
-.calculator button {
+.button {
     background: #333;
-    border-radius: 15px;
+    border-radius: 5px;
     height: 65px;
-    font-size: 2rem;
+    font-size: 4rem;
     color: #fff;
     text-align: center;
+    transition: background ease-in-out .2s, color ease-in .2s;
 }
 
 /* IMPORTANT BUTTON STYLING */
 .important {
-    background: #c00000 !important;
+    background: #c5c210;
 }
 
-/* DISPLAY STYLING */
-.display {
-    height: 65px !important;
-    font-size: 3rem;
-    text-align: right;
+.button:hover {
+    background: #fff;
 }
