@@ -153,7 +153,7 @@
                 // CHECK IF THE FIRST ENTRY IS A NEGATIVE NUMBER
                 if(nt < 0) {
                     // Set 'nt' to the absolute value of itself and add '-'.
-                    nt = Math.abs(nt) + '-';
+                    nt = '-' + Math.abs(nt);
                 }
                 
                 // Set the value of #answer to 'nt'.
@@ -164,14 +164,6 @@
 
                 // Set 'temp' to an empty string.
                 temp = '';
-
-            } else {
-
-                // IF BUTTON VALUE NOT EQUAL '=' CONTINUE BUILDING EQUATION
-                // Push the value of 'temp' on to the entries array.
-                // Push the value of 'val' (the clicked button) to the 'entries' array.
-                // Set 'temp' to an empty string.
-
-            }
+            } 
         });
     });
