@@ -59,6 +59,9 @@ body {
     width: 22%;
     margin-left: 4%;
 }
+.six.columns {
+    width: 48%;
+}
 
 .column:first-child,
 .columns:first-child {
