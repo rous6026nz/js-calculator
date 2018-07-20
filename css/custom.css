@@ -74,16 +74,11 @@ body {
     border-radius: 5px;
     height: 65px;
     font-size: 4rem;
-    color: #fff;
+    color: #fff !important;
     text-align: center;
-    transition: background ease-in-out .2s, color ease-in .2s;
 }
 
 /* IMPORTANT BUTTON STYLING */
 .important {
     background: #c5c210;
-}
-
-.button:hover {
-    background: #fff;
 }
