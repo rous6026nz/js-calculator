@@ -56,8 +56,13 @@
             }
 
             // CHECK IF 'CE'
+            if(val === 'CE') {
                 // Set the 'temp' variable to an empty string.
+                temp = '';
+
                 // Set the #answer value to an empty string.
+                display.value = 0;
+            }
 
             // CHECK IF 'X'
                 // Push the value of 'temp' on to the 'entries' array.
