@@ -28,7 +28,7 @@
 
             // CALLBACK FUNCTION VARIABLE BINDINGS
             // Create a variable to store the text value of each button element clicked - val.
-            var val = ele.innerHTML;
+            var val = ele.innerHTML; console.log(val);
 
             // RUN CHECKS FOR BUTTON TEXT VALUES:
             // CHECK IF NUMBER OR DECIMAL
@@ -65,9 +65,16 @@
             }
 
             // CHECK IF 'X'
+            if(val === 'x') {
                 // Push the value of 'temp' on to the 'entries' array.
+                entries.push(temp);
+
                 // Push a multiplier(*) on to the 'entries' array.
+                entries.push('*');
+
                 // Set the 'temp' variable to an empty string.
+                temp = '';
+            }
 
             // CHECK IF '÷'
                 // Push the value of 'temp' on to the 'entries' array.
