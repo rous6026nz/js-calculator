@@ -7,75 +7,97 @@
 
 // VARIABLE BINDINGS
     // Create a variable to store the users entries in an array - entries.
+    var entries = [],
+
     // Create a variable to store the total and set to 0 - total.
+        total = 0,
+
     // Create a variable to store each button press value and set to an empty string - temp.
+        temp = "",
+
+    // Create a variable to reference the calculator input field - display.
+        display = document.getElementById('answer');
 
 // BUTTON EVENT LISTENER
+    // Create a variable to store all the button elements.
+    var btnElem = document.querySelectorAll('.button');
+
     // Add a click event listener on all button elements of the calculator.
+    btnElem.forEach(function(ele) {
+        ele.addEventListener('click', function() {
 
-    // CALLBACK FUNCTION VARIABLE BINDINGS
-    // Create a variable to store the text value of each button element clicked - val.
+            // CALLBACK FUNCTION VARIABLE BINDINGS
+            // Create a variable to store the text value of each button element clicked - val.
+            var val = ele.innerHTML;
 
-    // RUN CHECKS FOR BUTTON TEXT VALUES:
-        // CHECK IF NUMBER
-            // If it is a number, append to the 'temp' variable.
-            // Display the value of 'temp' as the value of the #answer with a max. character limit of 10.
+            // RUN CHECKS FOR BUTTON TEXT VALUES:
+            // CHECK IF NUMBER OR DECIMAL
+            if(!isNaN(val) || val === '.') {
+                // If it is a number, append to the 'temp' variable.
+                temp += val;
 
-        // CHECK IF 'AC'
-            // Set the 'entries' array to an empty array.
-            // Set the 'total' variable to 0.
-            // Set the 'temp' variable to an empty string.
-            // Set the #answer value to an empty string.
+                // Display the value of 'temp' as the value of the #answer with a max. character limit of 10.
+                display.value = temp;
+            }
 
-        // CHECK IF 'CE'
-            // Set the 'temp' variable to an empty string.
-            // Set the #answer value to an empty string.
+            // CHECK IF 'AC'
+                // Set the 'entries' array to an empty array.
+                // Set the 'total' variable to 0.
+                // Set the 'temp' variable to an empty string.
+                // Set the #answer value to an empty string.
 
-        // CHECK IF 'X'
-            // Push the value of 'temp' on to the 'entries' array.
-            // Push a multiplier(*) on to the 'entries' array.
-            // Set the 'temp' variable to an empty string.
+            // CHECK IF 'CE'
+                // Set the 'temp' variable to an empty string.
+                // Set the #answer value to an empty string.
 
-        // CHECK IF '÷'
-            // Push the value of 'temp' on to the 'entries' array.
-            // Push a division(/) on to the 'entries' array.
-            // Set the 'temp' variable to an empty string.
+            // CHECK IF 'X'
+                // Push the value of 'temp' on to the 'entries' array.
+                // Push a multiplier(*) on to the 'entries' array.
+                // Set the 'temp' variable to an empty string.
 
-        // CHECK IF '='
-            // Push the value of 'temp' on to the 'entries' array.
-            // Get the first index of the entries array and store in a variable as a Number - nt.
+            // CHECK IF '÷'
+                // Push the value of 'temp' on to the 'entries' array.
+                // Push a division(/) on to the 'entries' array.
+                // Set the 'temp' variable to an empty string.
 
-        // LOOP THROUGH ALL ENTRIES AND BUILD THE EQUATION
-            // Start the 'counter' at 1 (the second index of the 'entries' array) which should be a symbol.
+            // CHECK IF '='
+                // Push the value of 'temp' on to the 'entries' array.
+                // Get the first index of the entries array and store in a variable as a Number - nt.
 
-            // LOOP VARIABLE BINDINGS
-                // Create a variable to store all number entries (will be the current index plus 1).
-                // Create a variable to store all math symbol entries (will be the current index).
+            // LOOP THROUGH ALL ENTRIES AND BUILD THE EQUATION
+                // Start the 'counter' at 1 (the second index of the 'entries' array) which should be a symbol.
 
-            // PERFORM THE MATH
-                // IF THE SYMBOL IS '+'
-                    // Set 'nt' to 'nt' plus 'nextNum'.
+                // LOOP VARIABLE BINDINGS
+                    // Create a variable to store all number entries (will be the current index plus 1).
+                    // Create a variable to store all math symbol entries (will be the current index).
 
-                // IF THE SYMBOL IS '-'
-                    // Set 'nt' to 'nt' minus 'nextNum'.
+                // PERFORM THE MATH
+                    // IF THE SYMBOL IS '+'
+                        // Set 'nt' to 'nt' plus 'nextNum'.
 
-                // IF THE SYMBOL IS 'X'
-                    // Set 'nt' to 'nt' times 'nextNum'.
+                    // IF THE SYMBOL IS '-'
+                        // Set 'nt' to 'nt' minus 'nextNum'.
 
-                // IF THE SYMBOL IS '÷'
-                    // Set 'nt' to 'nt' divided by 'nextNum'.
+                    // IF THE SYMBOL IS 'X'
+                        // Set 'nt' to 'nt' times 'nextNum'.
 
-            // INCREAMENT THE COUNTER
+                    // IF THE SYMBOL IS '÷'
+                        // Set 'nt' to 'nt' divided by 'nextNum'.
 
-        // END THE LOOP
+                // INCREAMENT THE COUNTER
 
-        // HANDLE NEGATIVE NUMBERS
-        // Set 'nt' to the absolute value of itself and add '-'.
-        // Set the value of #answer to 'nt'.
-        // Clear the 'entries' array.
-        // Set 'temp' to an empty string.
+            // END THE LOOP
 
-        // IF BUTTON VALUE NOT EQUAL '=' CONTINUE BUILDING EQUATION
-        // Push the value of 'temp' on to the entries array.
-        // Push the value of 'val' (the clicked button) to the 'entries' array.
-        // Set 'temp' to an empty string.
+            // HANDLE NEGATIVE NUMBERS
+            // Set 'nt' to the absolute value of itself and add '-'.
+            // Set the value of #answer to 'nt'.
+            // Clear the 'entries' array.
+            // Set 'temp' to an empty string.
+
+            // IF BUTTON VALUE NOT EQUAL '=' CONTINUE BUILDING EQUATION
+            // Push the value of 'temp' on to the entries array.
+            // Push the value of 'val' (the clicked button) to the 'entries' array.
+            // Set 'temp' to an empty string.
+
+        });
+    });
