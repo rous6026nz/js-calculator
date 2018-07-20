@@ -77,9 +77,16 @@
             }
 
             // CHECK IF '÷'
+            if(val === '÷') {
                 // Push the value of 'temp' on to the 'entries' array.
+                entries.push(temp);
+
                 // Push a division(/) on to the 'entries' array.
+                entries.push('/');
+
                 // Set the 'temp' variable to an empty string.
+                temp = '';
+            }
 
             // CHECK IF '='
                 // Push the value of 'temp' on to the 'entries' array.
