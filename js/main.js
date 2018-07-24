@@ -77,6 +77,9 @@
                 display.value = temp;
             }
 
+            // CHECK IF NOT EQUAL, AC, CE & isNaN.
+            if(isNaN(val) && val !== '=' && val !== 'AC' && val !== 'CE' ) buildArray(entries, val, temp);
+
             // CHECK IF 'AC'
             if(val === 'AC') {
                 // Set the 'entries' array to an empty array.
@@ -95,29 +98,29 @@
                 clearEntry();
             }
 
-            // CHECK IF 'X'
-            if(val === 'x') {
-                // Build the entries array.
-                buildArray(entries, val, temp);
-            }
+            // // CHECK IF 'X'
+            // if(val === 'x') {
+            //     // Build the entries array.
+            //     buildArray(entries, val, temp);
+            // }
 
-            // CHECK IF '÷'
-            if(val === '÷') {
-                // Build the entries array.
-                buildArray(entries, val, temp);
-            }
+            // // CHECK IF '÷'
+            // if(val === '÷') {
+            //     // Build the entries array.
+            //     buildArray(entries, val, temp);
+            // }
 
-            // CHECK IF '-'
-            if(val === '-') {
-                // Build the entries array.
-                buildArray(entries, val, temp);
-            }
+            // // CHECK IF '-'
+            // if(val === '-') {
+            //     // Build the entries array.
+            //     buildArray(entries, val, temp);
+            // }
 
-            // CHECK IF '+'
-            if(val === '+') {
-                // Build the entries array.
-                buildArray(entries, val, temp);
-            }
+            // // CHECK IF '+'
+            // if(val === '+') {
+            //     // Build the entries array.
+            //     buildArray(entries, val, temp);
+            // }
 
             // CHECK IF '='
             if(val === '=') {
@@ -130,25 +133,26 @@
                 // LOOP THROUGH ALL ENTRIES AND BUILD THE EQUATION
                 // Start the 'counter' at 1 (the second index of the 'entries' array) which should be a symbol.
                 for(var i = 1; i < entries.length; i ++) {
-                    // LOOP VARIABLE BINDINGS
-                        // Create a variable to store all number entries (will be the current index plus 1).
-                        var nextNum = Number(entries[i + 1]),
 
-                        // Create a variable to store all math symbol entries (will be the current index).
-                            symbol = entries[i];
+                    // LOOP VARIABLE BINDINGS
+                    // Create a variable to store all number entries (will be the current index plus 1).
+                    var nextNum = Number(entries[i + 1]);
+
+                    // Assign math symbol entries (will be the current index) to symbols array.
+                    var symbol = entries[i];
 
                     // PERFORM THE MATH
-                        // // IF THE SYMBOL IS '+', set 'nt' to 'nt' plus 'nextNum'.
-                        if(symbol === '+') nt += nextNum;
+                    // IF THE SYMBOL IS '+', set 'nt' to 'nt' plus 'nextNum'.
+                    if(symbol === '+') nt += nextNum;
 
-                        // // IF THE SYMBOL IS '-', set 'nt' to 'nt' minus 'nextNum'.
-                        if(symbol === '-') nt -= nextNum;
+                    // IF THE SYMBOL IS '-', set 'nt' to 'nt' minus 'nextNum'.
+                    if(symbol === '-') nt -= nextNum;
 
-                        // // IF THE SYMBOL IS 'X', set 'nt' to 'nt' times 'nextNum'.
-                        if(symbol === 'x') nt *= nextNum;
+                    // IF THE SYMBOL IS 'X', set 'nt' to 'nt' times 'nextNum'.
+                    if(symbol === 'x') nt *= nextNum;
 
-                        // // IF THE SYMBOL IS '÷', set 'nt' to 'nt' divided by 'nextNum'.
-                        if(symbol === '÷') nt /= nextNum;
+                    // IF THE SYMBOL IS '÷', set 'nt' to 'nt' divided by 'nextNum'.
+                    if(symbol === '÷') nt /= nextNum;
 
                     // INCREAMENT THE COUNTER
                     i ++;
