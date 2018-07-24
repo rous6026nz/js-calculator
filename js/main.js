@@ -78,8 +78,6 @@
                     // If it is a number, append to the 'temp' variable.
                     temp += value;
 
-                    console.log(temp);
-
                     // Display the value of 'temp' as the value of the #answer with a max. character limit of 10.
                     display.value = temp;
                 }
