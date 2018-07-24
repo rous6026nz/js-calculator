@@ -30,8 +30,11 @@
             // Create a variable to store the text value of each button element clicked - val.
             var val = ele.innerHTML;
 
+            // ------------------------------------------------------
             // HELPER FUNCTIONS
+            // ======================================================
 
+            // ------------------------------------------------------
             // Build entries array helper function.
             // Input:   Array
             //          Math Operator
@@ -47,7 +50,23 @@
                 // Set the 'temp' variable to an empty string.
                 temp = '';
             }
-            
+
+
+            // -------------------------------------------------------
+            // Clear entry helper function.
+            // Input:   Null
+            // Output:  Sets the temp variable to an empty string.
+            //          Resets the answer value to 0.
+            // -------------------------------------------------------
+            function clearEntry(){
+                // Set the 'temp' variable to an empty string.
+                temp = '';
+
+                // Set the #answer value to 0.
+                display.value = 0;
+            }
+
+
             // RUN CHECKS FOR BUTTON TEXT VALUES:
             // CHECK IF NUMBER OR DECIMAL
             if(!isNaN(val) || val === '.') {
@@ -66,20 +85,14 @@
                 // Set the 'total' variable to 0.
                 total = 0;
 
-                // Set the 'temp' variable to an empty string.
-                temp = '';
-
-                // Set the #answer value to an empty string.
-                display.value = 0;
+                // Call the clearEntry helper function.
+                clearEntry();
             }
 
             // CHECK IF 'CE'
             if(val === 'CE') {
-                // Set the 'temp' variable to an empty string.
-                temp = '';
-
-                // Set the #answer value to an empty string.
-                display.value = 0;
+                // Call the clearEntry helper function.
+                clearEntry();
             }
 
             // CHECK IF 'X'
@@ -112,7 +125,7 @@
                 entries.push(temp);
         
                 // Get the first index of the entries array and store in a variable as a Number - nt.
-                var nt = Number(entries[0]); console.log(nt);
+                var nt = Number(entries[0]);
 
                 // LOOP THROUGH ALL ENTRIES AND BUILD THE EQUATION
                 // Start the 'counter' at 1 (the second index of the 'entries' array) which should be a symbol.
@@ -122,7 +135,7 @@
                         var nextNum = Number(entries[i + 1]),
 
                         // Create a variable to store all math symbol entries (will be the current index).
-                            symbol = entries[i]; console.log(symbol);
+                            symbol = entries[i];
 
                     // PERFORM THE MATH
                         // // IF THE SYMBOL IS '+', set 'nt' to 'nt' plus 'nextNum'.
@@ -139,7 +152,6 @@
 
                     // INCREAMENT THE COUNTER
                     i ++;
-
                 }
                 // END THE LOOP
 
