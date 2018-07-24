@@ -67,15 +67,27 @@
             }
 
 
-            // RUN CHECKS FOR BUTTON TEXT VALUES:
-            // CHECK IF NUMBER OR DECIMAL
-            if(!isNaN(val) || val === '.') {
-                // If it is a number, append to the 'temp' variable.
-                temp += val;
+            // -------------------------------------------------------
+            // Check for numbers or decimal helper function.
+            // Input:   Value
+            // Output:  Displays a value.
+            // -------------------------------------------------------
+            function checkIsNum(value) {
+                // CHECK IF NUMBER OR DECIMAL
+                if(!isNaN(value) || value === '.') {
+                    // If it is a number, append to the 'temp' variable.
+                    temp += value;
 
-                // Display the value of 'temp' as the value of the #answer with a max. character limit of 10.
-                display.value = temp;
+                    console.log(temp);
+
+                    // Display the value of 'temp' as the value of the #answer with a max. character limit of 10.
+                    display.value = temp;
+                }
             }
+
+
+            // RUN CHECKS FOR BUTTON TEXT VALUES:
+            checkIsNum(val);
 
             // CHECK IF NOT EQUAL, AC, CE & isNaN.
             if(isNaN(val) && val !== '=' && val !== 'AC' && val !== 'CE' ) buildArray(entries, val, temp);
@@ -97,30 +109,6 @@
                 // Call the clearEntry helper function.
                 clearEntry();
             }
-
-            // // CHECK IF 'X'
-            // if(val === 'x') {
-            //     // Build the entries array.
-            //     buildArray(entries, val, temp);
-            // }
-
-            // // CHECK IF '÷'
-            // if(val === '÷') {
-            //     // Build the entries array.
-            //     buildArray(entries, val, temp);
-            // }
-
-            // // CHECK IF '-'
-            // if(val === '-') {
-            //     // Build the entries array.
-            //     buildArray(entries, val, temp);
-            // }
-
-            // // CHECK IF '+'
-            // if(val === '+') {
-            //     // Build the entries array.
-            //     buildArray(entries, val, temp);
-            // }
 
             // CHECK IF '='
             if(val === '=') {
